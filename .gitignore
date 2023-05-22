@@ -5,13 +5,12 @@ txt
 
 
 max/rec
-max/soundfiles
 
 rpp
-
-snd
 
 **/.DS_Store
 
 pd/mkv/WATCHME.mkv
 
+*.aif
+*.flac
