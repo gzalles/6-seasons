@@ -1,0 +1,99 @@
+#N canvas 0 25 960 560 12;
+#X obj 634 75 6s-files;
+#X text 26 379 1 go to Media > MIDI Settings and set NK2 as input device
+;
+#X msg 640 307 \; pd dsp 1 \;;
+#X msg 727 307 \; pd dsp 0 \;;
+#X text 640 284 turn DSP on/off in Pd;
+#X text 26 397 2 go to Media > Audio Settings and set your audio interface
+;
+#X floatatom 844 503 0 0 0 0 - - - 0;
+#X obj 844 415 cputime;
+#X obj 844 295 loadbang;
+#X obj 844 359 metro 1000;
+#X obj 844 387 t b b;
+#X obj 844 475 * 0.1;
+#X obj 844 444 int;
+#X text 794 523 CPU load in percent;
+#X text 867 325 <= on/off;
+#X obj 844 326 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 36 508 dependencies: vbap \, iem_ambi \, korg nano kontrol
+2 \, zexy;
+#N canvas 960 25 960 560 README 0;
+#X text 13 6 what are dependencies?;
+#X text 13 37 these are libraries/hardware that are required for the
+patch to work. in order to install these libraries go to Help > Find
+Externals and type in the name of the 5 libraries: zexy \, iem_ambi
+\, vbap \, iem_matrix and iem_lib. the final dependency is the Korg
+NK2 MIDI controller. you may find it on ebay.;
+#X text 13 169 the patch is meant to be controlled almost exclusively
+with the controller NK2 \, most of the functions of the patch do not
+work unless you use the controller. we will try to work on that in
+the future. the only part of the patch that must be controlled with
+a mouse is the "player gains" which set the ADC~ volumes for inputs
+1-4.;
+#X text 13 138 other notes;
+#X text 14 279 the start PD~ toggle initializes 8 sub-processes so
+behind the scenes we actually have many instances of Pd running at
+the same time \, allowing us to make use of multiple CPUs on the computer.
+there are also other sub-processes for VBAP spatialization of live
+inputs and recording.;
+#X text 535 496 acknowledgements: john hildebrand \, joshua jones \,
+the whale acoustics lab \, UCSD \, scripps institute of oceanography
+\, lei liang \, art power \, and the mivos quartet.;
+#X obj 833 85 pdcontrol;
+#X msg 833 33 browse https://www.cetus.ucsd.edu/, f 14;
+#X obj 833 12 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X restore 873 28 pd README;
+#X text 26 414 3 playback should begin alone \, turn up fader with
+NK2;
+#X text 837 6 version: 0.0.1;
+#X text 6 489 IMPORTANT:;
+#X text 36 527 iem_ambi also requires iem_matrix and iem_lib (Help
+> Find Externals);
+#N canvas 0 25 960 560 TODO 0;
+#X text 11 5 use smaller files caf? flac? next?;
+#X text 88 31 pd vanilla does not like compressed audio files \, there
+are a few externals that are in development around the internet but
+i decided to not try that since i am not sure how long they will be
+supported. Since the files are read from disk it does not improve performance
+but the audio files can take a lot of memory \, they are about 6.5GB.
+;
+#X text 10 132 is there any way to "package" the app? using libpd?
+maybe as a JUCE app?;
+#X restore 815 28 pd TODO;
+#X text 25 40 dimensions: 2D;
+#N canvas 960 25 960 560 diff 0;
+#X text 128 112 differences with main;
+#X text 181 138 5-0-player8: encodes sound files into octophonic;
+#X text 181 158 sfx8: VBAP algorithm using 8 channels and only one
+LFO;
+#X text 209 198 since there is no elevation we should make all elevations
+0 for SFP 5 snd files;
+#X text 495 308 note: even though main8 and main4 are set up only for
+2D we use the full set of harmonics \, this allows us to use the recordings
+afterwards more easily \, most decoders (and ambisonic plug-ins) expect
+3D soundfields.;
+#X text 181 178 rec8: the recording takes in 9 harmonics;
+#X text 184 237 6-seasons8: loads the appropriate abstractions;
+#X text 184 256 5-0-enc8: ambisonic encoder of ambisonic order 2 (for
+8 channel version);
+#X text 150 406 * main4 is the same thing but in quad instead of octo.
+this is to help more people perform the piece \, if their computers
+are older or they have less speakers...;
+#X restore 757 28 pd diff;
+#X obj 23 74 6-seasons4;
+#X text 26 3 ambisonic order: 1;
+#X text 26 22 number of channels: 4;
+#X connect 7 0 12 0;
+#X connect 8 0 15 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 0;
+#X connect 10 1 7 1;
+#X connect 11 0 6 0;
+#X connect 12 0 11 0;
+#X connect 15 0 9 0;

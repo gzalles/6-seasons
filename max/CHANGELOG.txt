@@ -1,0 +1,9 @@
+
+8.17.22
+
+* Fixed bug at init time which caused some messages to be printed twice.
+
+
+DATE UNKOWN
+
+* Exported ice collapse in season 4 to 5.0 (might need to re-arrange channels)

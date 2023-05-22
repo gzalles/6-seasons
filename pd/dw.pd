@@ -1,0 +1,35 @@
+#N canvas 0 25 960 560 12;
+#X obj 238 233 inlet;
+#X obj 145 233 inlet~;
+#X text 69 232 signal in;
+#X floatatom 238 257 5 0 0 0 - - - 0;
+#X obj 238 280 - 1;
+#X obj 238 304 abs;
+#X floatatom 238 328 5 0 0 0 - - - 0;
+#X floatatom 285 328 5 0 0 0 - - - 0;
+#X text 280 232 input values between 0 and 1;
+#X obj 159 377 *~;
+#X obj 238 351 *~;
+#X obj 101 416 outlet~;
+#X obj 237 416 outlet~;
+#X text 205 170 D/W module;
+#X obj 432 53 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 432 189 / 127;
+#X text 47 441 dry outlet (val == 0);
+#X text 237 439 wet outlet (val == 1);
+#X text 516 19 used in [5revs] so control the dry wet of reverbs in
+the SFPs;
+#X connect 0 0 3 0;
+#X connect 1 0 9 0;
+#X connect 1 0 10 0;
+#X connect 3 0 4 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 9 1;
+#X connect 7 0 10 1;
+#X connect 9 0 11 0;
+#X connect 10 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 3 0;

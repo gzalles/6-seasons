@@ -1,0 +1,1 @@
+a folder for you to put your recordings into. i recommend labeling them with the date, year_month_day.

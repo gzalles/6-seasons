@@ -1,0 +1,11 @@
+there are three version:
+
+* main16: this is the 3D, 16 channel version. the speakers are set up in two rings of 8. channel one is at -22.5 degrees azimuth [LEFT] and 30 elevation, channel 2 is at 22.5 degrees azimuth  [RIGHT] and 30 elevation, each subsequent speaker is 45 degrees from the last. channel 9 is at -22.5 and 0 degrees elevation, channel 10 at 22.5, etc. 
+
+* main8: the same as main16 but only 8 speakers at elevation 0. 
+
+* main4: standard quadraphonic configuration (L, R, Rs, Ls) at -45, 45, 135 and -135.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+NOTE: in ALL three versions ADC1-4 (inputs from microphones) are "projected" from the four corners of the room (-45, 45, 135, -135).
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

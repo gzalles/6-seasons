@@ -1,0 +1,4 @@
+bugs:
+
+* have to cycle for things to work? we might need delays to allow sub-processes to start up 
+* marker should start at 1 not 0. 

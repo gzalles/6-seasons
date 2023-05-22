@@ -1,0 +1,1620 @@
+#N canvas 14 25 960 1147 12;
+#X text 6 5 6-seasons patch in Pd;
+#X obj 353 339 vsl 15 128 0 1 0 0 empty 0_sfp_gain empty 0 -9 0 10
+#fcfcfc #000000 #000000 0 1;
+#X floatatom 353 254 5 0 0 0 - 0_sfp_roll - 0;
+#X obj 353 277 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 393 297 tgl 15 0 empty 1_sfp_mute empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 393 339 vsl 15 128 0 1 0 0 empty 1_sfp_gain empty 0 -9 0 10
+#fcfcfc #000000 #000000 0 1;
+#X floatatom 393 254 5 0 0 0 - 1_sfp_roll - 0;
+#X obj 393 277 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 433 297 tgl 15 0 empty 2_sfp_mute empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 433 339 vsl 15 128 0 1 0 0 empty 2_sfp_gain empty 0 -9 0 10
+#fcfcfc #000000 #000000 0 1;
+#X floatatom 433 254 5 0 0 0 - 2_sfp_roll - 0;
+#X obj 433 277 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 473 297 tgl 15 0 empty 3_sfp_mute empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 473 339 vsl 15 128 0 1 0 0 empty 3_sfp_gain empty 0 -9 0 10
+#fcfcfc #000000 #000000 0 1;
+#X floatatom 473 254 5 0 0 0 - 3_sfp_roll - 0;
+#X obj 473 277 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 513 297 tgl 15 0 empty 4_sfp_mute empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 513 339 vsl 15 128 0 1 0 0 empty 4_sfp_gain empty 0 -9 0 10
+#fcfcfc #000000 #000000 0 1;
+#X floatatom 513 254 5 0 0 0 - 4_sfp_roll - 0;
+#X obj 513 277 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 553 297 tgl 15 0 empty 5_sfp_mute empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X floatatom 553 254 5 0 0 0 - 5_sfp_roll - 0;
+#X obj 553 277 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 593 297 tgl 15 0 empty 6_sfp_mute empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X floatatom 593 254 5 0 0 0 - 6_sfp_roll - 0;
+#X obj 593 277 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 633 297 tgl 15 0 empty 7_sfp_mute empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X floatatom 633 254 5 0 0 0 - 7_sfp_roll - 0;
+#X obj 633 277 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 553 339 vsl 15 128 0 1 0 0 empty 5_sfp_gain empty 0 -9 0 10
+#fcfcfc #000000 #000000 0 1;
+#X obj 593 339 vsl 15 128 0 1 0 0 empty 6_sfp_gain empty 0 -9 0 10
+#fcfcfc #000000 #000000 0 1;
+#X obj 633 339 vsl 15 128 0 1 0 0 empty 7_sfp_gain empty 0 -9 0 10
+#fcfcfc #000000 #000000 0 1;
+#X floatatom 256 222 5 0 0 0 season - - 0;
+#X obj 226 305 bng 15 250 50 0 empty empty cycle 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 256 249 5 0 0 0 speed - - 0;
+#X obj 226 329 bng 15 250 50 0 empty empty stop 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 226 353 bng 15 250 50 0 empty empty play 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 226 377 bng 15 250 50 0 empty empty set 17 7 0 10 #fcfcfc #000000
+#000000;
+#X floatatom 252 400 5 0 0 0 marker - - 0;
+#X obj 207 430 tgl 15 0 empty empty player-1 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 207 454 tgl 15 0 empty empty player-2 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 276 430 tgl 15 0 empty empty player-3 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 276 454 tgl 15 0 empty empty player-4 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 57 606 loadbang;
+#X obj 112 933 round_zero 1e-06;
+#X msg 75 862 begin_pseudo_inverse;
+#X msg 55 884 end_pseudo_inverse;
+#X obj 57 628 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000
+#000000;
+#X text 238 878 DECODING;
+#X obj 416 1049 mtx_*~ 16 16 0, f 53;
+#X msg 111 714 1 30 22.5 \, 2 30 -22.5 \, 3 30 -67.5 \, 4 30 -112.5
+\, 5 30 -157.5 \, 6 30 -202.5 \, 7 30 -247.5 \, 8 30 -292.5 \, 9 0
+22.5 \, 10 0 -22.5 \, 11 0 -67.5 \, 12 0 -112.5 \, 13 0 -157.5 \, 14
+0 -202.5 \, 15 0 -247.5 \, 16 0 -292.5;
+#X msg 133 684 ambi_weight 1 1 1 1;
+#X msg 111 778 real_ls \$1 \$2 \$3;
+#X msg 90 832 pht_ls \$1 \$2 \$3;
+#X obj 112 911 ambi_decode3 3 3 16 4;
+#X obj 57 646 t b b b b b;
+#X msg 91 811 1 -45 0 \, 2 45 90 \, 3 -45 180 \, 4 -5 270;
+#X text 279 686 16 channel (two rings of 8ch);
+#N canvas 0 25 960 560 season 0;
+#X obj 26 15 r nk2_track_l;
+#X obj 128 15 r nk2_track_r;
+#X obj 44 131 f;
+#X obj 124 131 f;
+#X obj 124 163 + 1;
+#X floatatom 70 268 5 0 0 0 - - - 0;
+#X obj 26 47 sel 127;
+#N canvas 0 25 960 1147 filenames 0;
+#X obj 15 117 select 0 1 2 3 4 5 6, f 111;
+#X text 333 804 names of files to load;
+#X obj 15 77 inlet;
+#X text 59 76 pass season number to subpatch from parent;
+#X msg 14 189 \; 0_sfp_file Season1_0_New_Ice.aif \; 0_sfp_elev 30
+\; 0_sfp_distance 1 \; 1_sfp_file Season1_Ice_Plates_Pop.aif \; 2_sfp_file
+Season1_Ice_Slipping.aif \; 3_sfp_file Season1_Internal_Pressure.aif
+\; 4_sfp_file SILENCE.aiff \; 5_sfp_file SILENCE.aiff \; 6_sfp_file
+SILENCE.aiff \; 7_sfp_file SILENCE.aiff \;;
+#X msg 11 354 \; 0_sfp_file Season2_Quiet_Ice1.aif \; 0_sfp_elev 0
+\; 0_sfp_distance 1 \; 1_sfp_file Season2_Quiet_Ice2.aif \; 1_sfp_elev
+15 \; 1_sfp_distance 1 \; 2_sfp_file Season2_Quiet_Ice3.aif \; 2_sfp_elev
+30 \; 2_sfp_distance 1 \; 3_sfp_file SILENCE.aiff \; 3_sfp_elev 30
+\; 3_sfp_distance 1 \; 4_sfp_file SILENCE.aiff \; 4_sfp_elev 30 \;
+4_sfp_distance 1 \; 5_sfp_file SILENCE.aiff \; 5_sfp_elev 30 \; 5_sfp_distance
+1 \; 6_sfp_file SILENCE.aiff \; 6_sfp_elev 30 \; 6_sfp_distance 1 \;
+7_sfp_file SILENCE.aiff \;;
+#X msg 10 691 \; 0_sfp_file Season3_Surface.aif \; 0_sfp_elev 0 \;
+0_sfp_distance 1 \; 1_sfp_file Season3_Cracking1.aif \; 1_sfp_elev
+15 \; 1_sfp_distance 1 \; 2_sfp_file Season3_Cracking2.aif \; 2_sfp_elev
+30 \; 2_sfp_distance 1 \; 3_sfp_file Season3_Cracking3.aif \; 3_sfp_elev
+45 \; 3_sfp_distance 1 \; 4_sfp_file Season3_FM1.aif \; 4_sfp_elev
+55 \; 4_sfp_distance 1 \; 5_sfp_file Season3_FM2.aif \; 5_sfp_elev
+65 \; 5_sfp_distance 1 \; 6_sfp_file Season3_Wind1.aif \; 6_sfp_elev
+75 \; 6_sfp_distance 1 \; 7_sfp_file Season3_Wind2.aif \; 7_sfp_elev
+85 \; 7_sfp_distance 1 \;;
+#X msg 355 151 \; 0_sfp_file Season4_0_Ice_Ridge.aif \; 0_sfp_elev
+0 \; 0_sfp_distance 1 \; 1_sfp_file Season4_0_Quiet_Ice.aif \; 1_sfp_elev
+15 \; 1_sfp_distance 1 \; 2_sfp_file Season4_Bearded_Seal1.aif \; 2_sfp_elev
+30 \; 2_sfp_distance 1 \; 3_sfp_file Season4_Bearded_Seal2.aif \; 3_sfp_elev
+45 \; 3_sfp_distance 1 \; 4_sfp_file Season4_Beluga.aif \; 4_sfp_elev
+65 \; 4_sfp_distance 1 \; 5_sfp_file Season4_Bowhead.aif \; 5_sfp_elev
+65 \; 5_sfp_distance 1 \; 6_sfp_file SILENCE.aiff \; 7_sfp_file SILENCE.aiff
+\;;
+#X msg 304 463 \; 0_sfp_file Season5_0_Ice1.aif \; 0_sfp_elev 0 \;
+0_sfp_distance 1 \; 1_sfp_file Season5_Bearded_Seal1.aif \; 1_sfp_elev
+15 \; 1_sfp_distance 1 \; 2_sfp_file Season5_Beluga1.aif \; 2_sfp_elev
+30 \; 2_sfp_distance 1 \; 3_sfp_file Season5_Bowhead1.aif \; 3_sfp_elev
+45 \; 3_sfp_distance 1 \; 4_sfp_file Season5_Bearded_Seals_Solos.aif
+\; 4_sfp_elev 15 \; 4_sfp_distance 1 \; 5_sfp_file Season5_Beluga_Solos.aif
+\; 5_sfp_elev 15 \; 5_sfp_distance 1 \; 6_sfp_file Season5_Bowhead_Solos.aif
+\; 6_sfp_elev 15 \; 6_sfp_distance 1 \; 7_sfp_file SILENCE.aiff \;
+;
+#X msg 295 835 \; 0_sfp_file Season6_0_Ice.aif \; 0_sfp_elev 0 \; 0_sfp_distance
+1 \; 1_sfp_file Season6_Beluga1.aif \; 1_sfp_elev 15 \; 1_sfp_distance
+1 \; 2_sfp_file Season6_Beluga2_Pod.aif \; 2_sfp_elev 30 \; 2_sfp_distance
+1 \; 3_sfp_file Season6_Bowhead1.aif \; 3_sfp_elev 45 \; 3_sfp_distance
+1 \; 4_sfp_file Season6_Beluga_Solos.aif \; 4_sfp_elev 60 \; 4_sfp_distance
+1 \; 5_sfp_file SILENCE.aiff \; 6_sfp_file SILENCE.aiff \; 7_sfp_file
+SILENCE.aiff \;;
+#X text 512 19 in contrast to MAX patch here we open the symbol "open"
+before sending filenames to SFPs. I simply use a text editor to replace
+the strings with a whitespace.;
+#X text 787 744 CODA;
+#X msg 628 763 \; 0_sfp_file open Season1_0_New_Ice.aif \; 0_sfp_elev
+0 \; 0_sfp_distance 1 \; 1_sfp_file open Season2_0_Quiet_Ice1.aif \;
+1_sfp_elev 15 \; 1_sfp_distance 1 \; 2_sfp_file open Season2_Beluga_Stranded1.aif
+\; 2_sfp_elev 30 \; 2_sfp_distance 1 \; 3_sfp_file open Season2_Beluga_Stranded2.aif
+\; 3_sfp_elev 30 \; 3_sfp_distance 1 \; 4_sfp_file open Season2_Beluga_Stranded3.aif
+\; 4_sfp_elev 30 \; 4_sfp_distance 1 \; 5_sfp_file open Season2_Beluga_Stranded4.aif
+\; 5_sfp_elev 30 \; 5_sfp_distance 1 \; 6_sfp_file open SILENCE.aiff
+\; 7_sfp_file open SILENCE.aiff \;;
+#X text 649 706 TODO: duplicate filename New Ice in CODA;
+#X connect 0 0 4 0;
+#X connect 0 1 5 0;
+#X connect 0 2 6 0;
+#X connect 0 3 7 0;
+#X connect 0 4 8 0;
+#X connect 0 5 9 0;
+#X connect 0 6 12 0;
+#X connect 2 0 0 0;
+#X restore 265 342 pd filenames;
+#X obj 44 163 - 1;
+#X floatatom 44 195 5 0 0 0 - - - 0;
+#X floatatom 124 195 5 0 0 0 - - - 0;
+#X obj 72 466 s curr-season;
+#X obj 148 74 r curr-season;
+#X obj 128 47 sel 127;
+#X obj 279 74 r sfp_all_cycle;
+#X msg 279 131 0;
+#X floatatom 171 347 5 0 0 0 - - - 0;
+#X obj 61 74 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 91 74 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 70 299 clip 0 6;
+#X text 265 298 we encode each 5 surround sound file at a different
+elevation!;
+#X text 542 14 track is used to change files \, there are 6 seasons
++ the coda;
+#X text 308 130 reset all;
+#X obj 171 378 + 1;
+#X obj 171 410 select 7;
+#X obj 212 474 print Season;
+#X msg 212 442 \$1;
+#X msg 171 442 CODA;
+#X text 238 409 print season including extra CODA;
+#X text 51 499 send current season to GUI as well;
+#X text 360 346 <<< FILENAMES!;
+#X connect 0 0 6 0;
+#X connect 1 0 13 0;
+#X connect 2 0 8 0;
+#X connect 3 0 4 0;
+#X connect 4 0 10 0;
+#X connect 5 0 19 0;
+#X connect 6 0 2 0;
+#X connect 8 0 9 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
+#X connect 12 0 3 1;
+#X connect 12 0 2 1;
+#X connect 13 0 3 0;
+#X connect 14 0 15 0;
+#X connect 15 0 5 0;
+#X connect 16 0 23 0;
+#X connect 17 0 2 0;
+#X connect 18 0 3 0;
+#X connect 19 0 11 0;
+#X connect 19 0 7 0;
+#X connect 19 0 16 0;
+#X connect 23 0 24 0;
+#X connect 24 0 27 0;
+#X connect 24 1 26 0;
+#X connect 26 0 25 0;
+#X connect 27 0 25 0;
+#X restore 711 559 pd season;
+#N canvas 0 25 960 560 speed 0;
+#X obj 100 69 r nk2_back;
+#X obj 100 93 sel 127;
+#X obj 100 157 f;
+#X floatatom 150 226 5 0 0 0 - - - 0;
+#X obj 192 93 sel 127;
+#X obj 192 157 f;
+#X obj 192 69 r nk2_forward;
+#X obj 192 181 + 1;
+#X obj 100 181 - 1;
+#X obj 90 296 s curr-speed;
+#X obj 304 117 r curr-speed;
+#X msg 378 189 1;
+#X obj 378 165 r sfp_all_cycle;
+#X text 472 16 in contrast to MSP patch in this version we can reverse
+playback!;
+#X obj 252 270 print Speed;
+#X text 411 472 Sends speed coefficient to [5-0-player] which controls
+the frequency of the phasor. The phasor is used to scan the tables
+which hold the soundfiles.;
+#X obj 230 328 s sfp_all_speed;
+#X text 342 332 send to sub-process helper;
+#X text 91 320 send to GUI;
+#X text 414 188 receive loadbang from [p cycle] used to reset whole
+patch;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 8 0;
+#X connect 3 0 9 0;
+#X connect 3 0 14 0;
+#X connect 3 0 16 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 10 0 5 1;
+#X connect 10 0 2 1;
+#X connect 11 0 3 0;
+#X connect 12 0 11 0;
+#X restore 711 591 pd speed;
+#N canvas 328 25 960 560 marker 0;
+#X obj 119 133 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 193 133 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 119 153 f;
+#X floatatom 119 201 5 0 0 0 - - - 0;
+#X obj 193 153 f;
+#X floatatom 193 201 5 0 0 0 - - - 0;
+#X floatatom 154 260 5 0 0 0 - - - 0;
+#X text 619 32 used to turn on/off SFX for quartet;
+#X obj 205 318 s curr-marker;
+#X obj 315 177 r curr-marker;
+#X obj 154 283 clip 0 3;
+#X floatatom 154 307 5 0 0 0 - - - 0;
+#X obj 119 33 r nk2_set_l;
+#X obj 191 61 r nk2_set_r;
+#X obj 118 390 f;
+#X obj 73 318 r nk2_set;
+#X obj 118 414 route 0 1 2 3;
+#X obj 118 438 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 139 438 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 161 438 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 183 438 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X msg 210 438 reject;
+#X obj 118 458 s 1-inst-sfx;
+#X obj 118 482 s 2-inst-sfx;
+#X obj 137 502 s 3-inst-sfx;
+#X obj 137 526 s 4-inst-sfx;
+#X text 242 485 turn DLA with feedback on/off and stop spatial panning
+(when off instruments return to original position);
+#X obj 73 342 sel 127;
+#X obj 22 402 s marker-set;
+#X text 21 422 for GUI;
+#X obj 388 352 r sfp_all_cycle;
+#X msg 199 375 0;
+#X obj 119 177 - 1;
+#X obj 193 177 + 1;
+#X obj 191 85 sel 127;
+#X obj 119 57 sel 127;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 32 0;
+#X connect 3 0 6 0;
+#X connect 4 0 33 0;
+#X connect 5 0 6 0;
+#X connect 6 0 10 0;
+#X connect 9 0 4 1;
+#X connect 9 0 2 1;
+#X connect 10 0 8 0;
+#X connect 10 0 11 0;
+#X connect 11 0 14 1;
+#X connect 12 0 35 0;
+#X connect 13 0 34 0;
+#X connect 14 0 16 0;
+#X connect 15 0 27 0;
+#X connect 16 0 17 0;
+#X connect 16 1 18 0;
+#X connect 16 2 19 0;
+#X connect 16 3 20 0;
+#X connect 16 4 21 0;
+#X connect 17 0 22 0;
+#X connect 18 0 23 0;
+#X connect 19 0 24 0;
+#X connect 20 0 25 0;
+#X connect 27 0 14 0;
+#X connect 27 0 28 0;
+#X connect 30 0 31 0;
+#X connect 31 0 17 0;
+#X connect 31 0 18 0;
+#X connect 31 0 19 0;
+#X connect 31 0 20 0;
+#X connect 32 0 3 0;
+#X connect 33 0 5 0;
+#X connect 34 0 1 0;
+#X connect 35 0 0 0;
+#X restore 711 623 pd marker;
+#N canvas 0 25 960 560 cycle 0;
+#X obj 123 45 loadbang;
+#X obj 150 212 r nk2_cycle;
+#X obj 289 272 s sfp_all_cycle;
+#X obj 150 236 sel 127;
+#X obj 325 351 print Cycle;
+#X msg 325 327 system re-initialized.;
+#X text 132 402 ROLL AND GAIN DO NOT GET RESET! this is because the
+NK2 is not motorized. To reset these vals put MIDI controls back to
+0 position.;
+#X obj 123 69 t b b b, f 41;
+#X msg 450 122 \; pd dsp 1;
+#X msg 266 98 1;
+#X text 317 187 1 turn on dsp || 2 turn on sub-processes || 3 re-init
+systesm;
+#X obj 266 122 s pd~status-init;
+#X text 533 10 re-init includes: * season back to 0 * marker back to
+0 * recording off * solo off * mute off * route off;
+#X connect 0 0 7 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X connect 7 0 2 0;
+#X connect 7 1 9 0;
+#X connect 7 2 8 0;
+#X connect 9 0 11 0;
+#X restore 711 655 pd cycle;
+#N canvas 0 25 960 560 globals 0;
+#X obj 215 133 sel 127;
+#X obj 215 109 r nk2_record;
+#X obj 133 109 r nk2_play;
+#X obj 53 109 r nk2_stop;
+#X obj 133 133 sel 127;
+#X obj 53 133 sel 127;
+#X text 29 19 stop sends a 0 coefficient to phasor. change freq to
+0;
+#X text 27 58 play sends a 1 coefficient to phasor. change freq to
+1f;
+#X text 25 39 record sends message to [pd recording];
+#X obj 51 274 s sfp_all_stop;
+#X obj 133 197 s sfp_all_play;
+#X obj 266 256 s sfp_all_record;
+#X obj 266 207 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X msg 53 157 1;
+#X msg 133 157 1;
+#X obj 505 74 r sfp_all_cycle;
+#X text 619 70 re-init stops SFPs and recording;
+#X msg 505 98 0;
+#X connect 0 0 12 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 14 0;
+#X connect 5 0 13 0;
+#X connect 12 0 11 0;
+#X connect 13 0 9 0;
+#X connect 14 0 10 0;
+#X connect 15 0 13 0;
+#X connect 15 0 17 0;
+#X connect 17 0 12 0;
+#X restore 711 687 pd globals;
+#N canvas 0 25 960 560 notes 0;
+#X text 7 6 GUI should be controlled using NK2 with the exception of
+gain controls for quartet. Most functions will not work using the mouse.
+The GUI is meant as a visual feedback system. Messages are passed from
+the MIDI objects to the SFPs and GUI interface simultaneously. One
+TODO could be to first send messages to GUI and then to SFPs allowing
+one to control the patch both via the controller and the mouse...;
+#X text 7 123 the route var name is historical. we first thought of
+using it to send audio only to musicians via headphones but we did
+not have enough outputs on our system to accomodate this. in the MAX
+version these are toggles but I think the buttons are simpler and work
+just as well.;
+#X text 7 212 due to the way the patch is programmed we cannot preveent
+speed from starting playback automatically. at init cycle resets speed
+which launches playback. this is another exception/difference with
+the MAX version. however \, the benefit is that we can do strange things
+like reverse playback in Pd since we use phasors to scan tables.;
+#X restore 711 719 pd notes;
+#N canvas 0 612 960 560 live-inputs 0;
+#X obj 89 97 adc~ 1 2 3 4;
+#X obj 165 166 *~;
+#X obj 232 166 *~;
+#X obj 288 166 *~;
+#X obj 359 166 *~;
+#X obj 288 65 r p0-gain;
+#X obj 288 93 / 100;
+#X obj 288 121 lop~ 2;
+#X obj 359 93 / 100;
+#X obj 359 121 lop~ 2;
+#X obj 430 93 / 100;
+#X obj 430 121 lop~ 2;
+#X obj 504 93 / 100;
+#X obj 504 121 lop~ 2;
+#X obj 359 65 r p1-gain;
+#X obj 430 65 r p2-gain;
+#X obj 504 65 r p3-gain;
+#X text 26 74 input > delay > pan (VBAP);
+#X obj 741 296 sel 1 0;
+#X msg 822 372 pd~ stop;
+#X obj 24 237 r 1-inst-sfx;
+#X obj 166 237 r 2-inst-sfx;
+#X obj 309 237 r 3-inst-sfx;
+#X obj 447 237 r 4-inst-sfx;
+#X msg 24 258 sfx-status \$1;
+#X msg 166 258 sfx-status \$1;
+#X msg 309 258 sfx-status \$1;
+#X msg 447 258 sfx-status \$1;
+#X obj 696 249 r pd~status;
+#X obj 696 273 t b f;
+#X msg 34 319 default-azi -45;
+#X msg 176 319 default-azi 45;
+#X msg 319 319 default-azi 135;
+#X msg 457 319 default-azi -135;
+#X text 537 233 receive from marker;
+#X text 712 230 receive from [6-seasons] GUI;
+#X text 716 327 if status on begin sub-process;
+#X text 574 63 receive gains from sliders/faders;
+#X text 11 194 DLA lines w/ feedback;
+#X text 549 418 MC is messy...;
+#X obj 24 393 pd~ -ninsig 1 -noutsig 16 -fifo 20, f 11;
+#X text 12 462 send VBAP out of 16 speakers;
+#X obj 165 393 pd~ -ninsig 1 -noutsig 16 -fifo 20, f 12;
+#X obj 309 393 pd~ -ninsig 1 -noutsig 16 -fifo 20, f 12;
+#X obj 448 393 pd~ -ninsig 1 -noutsig 16 -fifo 20, f 12;
+#X obj 14 439 dac~ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16, f 80;
+#X text 13 9 signals come in \, they go through the dla abstraction
+\, then they get spatialized using VBAP using sub-processes;
+#N canvas 960 612 960 560 note 0;
+#X text 14 10 why VBAP? people believe that ambisonics has a small
+sweet spot and is not well-suited for localization tasks. in atmos
+and other professional systems VBAP is used for sound objects and ambisonics
+is used for environmental soundscapes. this is the approach that has
+been taken in this patch.;
+#X text 14 109 the recording follows the same logic \, the raw microphones
+are recorded sans SFXs so that the soundscape can later be mixed meticulously
+with the sound objects in Reaper or Ardour. in these DAW we may more
+carefully articulate the position of sound sources and control other
+FX such as delay.;
+#X text 14 208 in this patch the delay time \, feedback gain coefficient
+and the rate of the LFOs which control the azimuth and elevation of
+the ADC inputs is randomized. these signals are \, once again \, only
+articulated for live performance. the recording file which is created
+by the patch contains an ambisonic file in SID format and 4 raw audio
+signals from the musicians in that order \, 20 channels in total.;
+#X text 125 325 1-16 ambisonic soundfield || ADC1 || ADC2 || ADC3 ||
+ADC4;
+#X text 87 399 use the ambix toolkit to converrt SID to ambix. the
+soundfield includes the local reverbs and the fader volume effects.
+it is a recording of your performance.;
+#X restore 888 11 pd note;
+#X text 534 528 tried to keep the patch neat but there is a lot going
+on.;
+#X obj 165 194 dla 1;
+#X obj 232 194 dla 2;
+#X obj 288 194 dla 3;
+#X obj 359 194 dla 4;
+#X msg 627 372 pd~ start -nogui sfx16.pd;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 2 3 0;
+#X connect 0 3 4 0;
+#X connect 1 0 49 0;
+#X connect 2 0 50 0;
+#X connect 3 0 51 0;
+#X connect 4 0 52 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 1 1;
+#X connect 8 0 9 0;
+#X connect 9 0 2 1;
+#X connect 10 0 11 0;
+#X connect 11 0 3 1;
+#X connect 12 0 13 0;
+#X connect 13 0 4 1;
+#X connect 14 0 8 0;
+#X connect 15 0 10 0;
+#X connect 16 0 12 0;
+#X connect 18 0 53 0;
+#X connect 18 1 19 0;
+#X connect 19 0 40 0;
+#X connect 19 0 42 0;
+#X connect 19 0 43 0;
+#X connect 19 0 44 0;
+#X connect 20 0 24 0;
+#X connect 21 0 25 0;
+#X connect 22 0 26 0;
+#X connect 23 0 27 0;
+#X connect 24 0 40 0;
+#X connect 25 0 42 0;
+#X connect 26 0 43 0;
+#X connect 27 0 44 0;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
+#X connect 29 0 33 0;
+#X connect 29 0 32 0;
+#X connect 29 0 31 0;
+#X connect 29 1 18 0;
+#X connect 30 0 40 0;
+#X connect 31 0 42 0;
+#X connect 32 0 43 0;
+#X connect 33 0 44 0;
+#X connect 40 1 45 0;
+#X connect 40 2 45 1;
+#X connect 40 3 45 2;
+#X connect 40 4 45 3;
+#X connect 40 5 45 4;
+#X connect 40 6 45 5;
+#X connect 40 7 45 6;
+#X connect 40 8 45 7;
+#X connect 40 9 45 8;
+#X connect 40 10 45 9;
+#X connect 40 11 45 10;
+#X connect 40 12 45 11;
+#X connect 40 13 45 12;
+#X connect 40 14 45 13;
+#X connect 40 15 45 14;
+#X connect 40 16 45 15;
+#X connect 42 1 45 0;
+#X connect 42 2 45 1;
+#X connect 42 3 45 2;
+#X connect 42 4 45 3;
+#X connect 42 5 45 4;
+#X connect 42 6 45 5;
+#X connect 42 7 45 6;
+#X connect 42 8 45 7;
+#X connect 42 9 45 8;
+#X connect 42 10 45 9;
+#X connect 42 11 45 10;
+#X connect 42 12 45 11;
+#X connect 42 13 45 12;
+#X connect 42 14 45 13;
+#X connect 42 15 45 14;
+#X connect 42 16 45 15;
+#X connect 43 1 45 0;
+#X connect 43 2 45 1;
+#X connect 43 3 45 2;
+#X connect 43 4 45 3;
+#X connect 43 5 45 4;
+#X connect 43 6 45 5;
+#X connect 43 7 45 6;
+#X connect 43 8 45 7;
+#X connect 43 9 45 8;
+#X connect 43 10 45 9;
+#X connect 43 11 45 10;
+#X connect 43 12 45 11;
+#X connect 43 13 45 12;
+#X connect 43 14 45 13;
+#X connect 43 15 45 14;
+#X connect 43 16 45 15;
+#X connect 44 1 45 0;
+#X connect 44 2 45 1;
+#X connect 44 3 45 2;
+#X connect 44 4 45 3;
+#X connect 44 5 45 4;
+#X connect 44 6 45 5;
+#X connect 44 7 45 6;
+#X connect 44 8 45 7;
+#X connect 44 9 45 8;
+#X connect 44 10 45 9;
+#X connect 44 11 45 10;
+#X connect 44 12 45 11;
+#X connect 44 13 45 12;
+#X connect 44 14 45 13;
+#X connect 44 15 45 14;
+#X connect 44 16 45 15;
+#X connect 49 0 40 0;
+#X connect 50 0 42 0;
+#X connect 51 0 43 0;
+#X connect 52 0 44 0;
+#X connect 53 0 40 0;
+#X connect 53 0 42 0;
+#X connect 53 0 43 0;
+#X connect 53 0 44 0;
+#X restore 711 527 pd live-inputs;
+#X floatatom 736 356 5 0 100 0 p0-gain - p0-gain 0;
+#X floatatom 736 378 5 0 100 0 p1-gain - p1-gain 0;
+#X floatatom 736 400 5 0 100 0 p2-gain - p2-gain 0;
+#X floatatom 736 422 5 0 100 0 p3-gain - p3-gain 0;
+#X obj 794 1070 dac~ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16, f 15
+;
+#X text 205 841 random phtmn ldpskrs;
+#X obj 185 125 r curr-season;
+#X text 728 204 Lei Liang;
+#X text 681 335 no MIDI control;
+#X obj 37 345 r curr-marker;
+#X obj 185 149 + 1;
+#X obj 185 173 r curr-speed;
+#X obj 26 426 r 1-inst-sfx;
+#X obj 26 450 r 2-inst-sfx;
+#X obj 26 474 r 3-inst-sfx;
+#X obj 26 498 r 4-inst-sfx;
+#X obj 226 281 tgl 15 0 empty empty recording 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 781 557 controlled by track;
+#X text 784 625 SFX for live inputs;
+#X text 775 654 reset everything;
+#X text 775 719 comments;
+#X text 262 1069 HOA + live ins rec.;
+#X obj 37 321 r marker-set;
+#X obj 37 249 r sfp_all_cycle;
+#X text 788 689 stop \, play \, rec;
+#X text 775 590 playback speed;
+#X text 816 526 quartet ADCs;
+#X obj 37 273 r sfp_all_stop;
+#X obj 37 297 r sfp_all_play;
+#X obj 37 225 r sfp_all_record;
+#X text 5 26 dependencies: vbap \, iem_ambi \, korg nano kontrol 2
+\, zexy;
+#X text 301 253 reverb;
+#X text 316 275 solo;
+#X text 316 295 mute;
+#X text 296 316 restart;
+#N canvas 960 25 960 560 mute 0;
+#X obj 17 25 r nk2_mute_0;
+#X obj 109 25 r nk2_mute_1;
+#X obj 202 25 r nk2_mute_2;
+#X obj 299 25 r nk2_mute_3;
+#X obj 403 25 r nk2_mute_4;
+#X obj 505 25 r nk2_mute_5;
+#X obj 602 25 r nk2_mute_6;
+#X obj 697 25 r nk2_mute_7;
+#X obj 132 91 sel 127;
+#X obj 192 91 sel 127;
+#X obj 252 91 sel 127;
+#X obj 309 91 sel 127;
+#X obj 382 91 sel 127;
+#X obj 447 91 sel 127;
+#X obj 524 91 sel 127;
+#X obj 585 91 sel 127;
+#X obj 264 201 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 290 201 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 316 201 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 342 201 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 368 201 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 394 201 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 422 201 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 448 201 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 708 516 roll \, solo \, mute \, route and gain;
+#X text 64 349 inside SFP [5-0-player] we take the value and x the
+signals based on status of mute buttons.;
+#X obj 198 268 s 1_sfp_mute;
+#X obj 291 268 s 2_sfp_mute;
+#X obj 382 268 s 3_sfp_mute;
+#X obj 475 268 s 4_sfp_mute;
+#X obj 568 268 s 5_sfp_mute;
+#X obj 661 268 s 6_sfp_mute;
+#X obj 752 268 s 7_sfp_mute;
+#X obj 100 268 s 0_sfp_mute;
+#X msg 748 95 0;
+#X obj 748 71 r sfp_all_cycle;
+#X text 785 97 re-init;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 16 0;
+#X connect 9 0 17 0;
+#X connect 10 0 18 0;
+#X connect 11 0 19 0;
+#X connect 12 0 20 0;
+#X connect 13 0 21 0;
+#X connect 14 0 22 0;
+#X connect 15 0 23 0;
+#X connect 16 0 33 0;
+#X connect 17 0 26 0;
+#X connect 18 0 27 0;
+#X connect 19 0 28 0;
+#X connect 20 0 29 0;
+#X connect 21 0 30 0;
+#X connect 22 0 31 0;
+#X connect 23 0 32 0;
+#X connect 34 0 23 0;
+#X connect 34 0 22 0;
+#X connect 34 0 21 0;
+#X connect 34 0 20 0;
+#X connect 34 0 19 0;
+#X connect 34 0 18 0;
+#X connect 34 0 17 0;
+#X connect 34 0 16 0;
+#X connect 35 0 34 0;
+#X restore 682 89 pd mute;
+#X text 681 23 roll \, solo \, mute \, route and gain;
+#N canvas 960 612 960 560 roll 0;
+#X text 223 188 range between 0 and 1;
+#X obj 259 104 r nk2_roll_0;
+#X obj 259 128 / 127;
+#X floatatom 259 152 5 0 0 0 - - - 0;
+#X obj 373 128 / 127;
+#X floatatom 373 152 5 0 0 0 - - - 0;
+#X obj 474 128 / 127;
+#X floatatom 474 152 5 0 0 0 - - - 0;
+#X obj 588 128 / 127;
+#X floatatom 588 152 5 0 0 0 - - - 0;
+#X obj 261 282 / 127;
+#X floatatom 261 306 5 0 0 0 - - - 0;
+#X obj 375 282 / 127;
+#X floatatom 375 306 5 0 0 0 - - - 0;
+#X obj 476 282 / 127;
+#X floatatom 476 306 5 0 0 0 - - - 0;
+#X obj 590 282 / 127;
+#X floatatom 590 306 5 0 0 0 - - - 0;
+#X obj 373 104 r nk2_roll_1;
+#X obj 474 104 r nk2_roll_2;
+#X obj 588 104 r nk2_roll_3;
+#X obj 261 258 r nk2_roll_4;
+#X obj 375 258 r nk2_roll_5;
+#X obj 476 258 r nk2_roll_6;
+#X obj 590 258 r nk2_roll_7;
+#X obj 259 213 s 0_sfp_roll;
+#X obj 373 213 s 1_sfp_roll;
+#X obj 474 213 s 2_sfp_roll;
+#X obj 588 213 s 3_sfp_roll;
+#X obj 261 367 s 4_sfp_roll;
+#X obj 375 367 s 5_sfp_roll;
+#X obj 476 367 s 6_sfp_roll;
+#X obj 590 367 s 7_sfp_roll;
+#X text 60 22 roll is used to control the reverb dry/wet (D/W) for
+each SFP. it is called roll for historical reasons.;
+#X text 678 105 range between 0 and 127;
+#X obj 30 83 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 51 83 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 71 83 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 92 83 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 30 223 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 51 223 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 71 223 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 92 223 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X text 608 7 cycle does NOT affect roll \, reset these manually;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 25 0;
+#X connect 4 0 5 0;
+#X connect 5 0 26 0;
+#X connect 6 0 7 0;
+#X connect 7 0 27 0;
+#X connect 8 0 9 0;
+#X connect 9 0 28 0;
+#X connect 10 0 11 0;
+#X connect 11 0 29 0;
+#X connect 12 0 13 0;
+#X connect 13 0 30 0;
+#X connect 14 0 15 0;
+#X connect 15 0 31 0;
+#X connect 16 0 17 0;
+#X connect 17 0 32 0;
+#X connect 18 0 4 0;
+#X connect 19 0 6 0;
+#X connect 20 0 8 0;
+#X connect 21 0 10 0;
+#X connect 22 0 12 0;
+#X connect 23 0 14 0;
+#X connect 24 0 16 0;
+#X connect 35 0 2 0;
+#X connect 36 0 4 0;
+#X connect 37 0 6 0;
+#X connect 38 0 8 0;
+#X connect 39 0 10 0;
+#X connect 40 0 12 0;
+#X connect 41 0 14 0;
+#X connect 42 0 16 0;
+#X restore 682 43 pd roll;
+#N canvas 0 612 960 560 solo 0;
+#X obj 29 67 r nk2_solo_0;
+#X obj 122 68 r nk2_solo_1;
+#X obj 218 68 r nk2_solo_2;
+#X obj 310 68 r nk2_solo_3;
+#X obj 406 68 r nk2_solo_4;
+#X obj 498 68 r nk2_solo_5;
+#X obj 594 68 r nk2_solo_6;
+#X obj 686 68 r nk2_solo_7;
+#X text 7 1 solo logic: we must pack the status of all the solo buttons
+together and sum their value to check if any of these are on. if any
+of them are on then we use the actual status of the toggles \, otherwise
+we x all SFPs by 1;
+#X obj 29 91 sel 127;
+#X obj 29 115 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 122 92 sel 127;
+#X obj 122 116 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 218 92 sel 127;
+#X obj 218 116 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 310 92 sel 127;
+#X obj 310 116 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 406 92 sel 127;
+#X obj 406 116 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 498 92 sel 127;
+#X obj 498 116 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 594 92 sel 127;
+#X obj 594 116 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 686 92 sel 127;
+#X obj 686 116 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 852 1 requires: zexy;
+#X obj 150 176 pak f f f f f f f f, f 73;
+#X obj 84 249 sum;
+#X floatatom 84 273 5 0 0 0 - - - 0;
+#X text 120 273 if(condition \, true \, false);
+#X obj 84 296 expr if($f1 == 0 \, 1 \, 0);
+#X obj 84 320 sel 1 0, f 26;
+#X msg 36 425 All solos off.;
+#X msg 60 464 One or more solos on.;
+#X obj 239 425 list, f 17;
+#X text 491 248 first we determine if any of the solos are on. if so
+we use the status of the solo buttons from the list. if none of the
+solos are on then we show the SOLO buttons as off in the GUI but we
+turn on the signals in the SFP abstraction.;
+#X text 686 135 pak all status toggles;
+#X text 111 248 add together;
+#X text 370 407 store the list;
+#X obj 35 497 print;
+#X obj 80 521 s all_sfp_solo_off;
+#X obj 239 449 unpack f f f f f f f f, f 42;
+#X obj 80 497 s 0_sfp_solo;
+#X obj 173 497 s 1_sfp_solo;
+#X obj 265 497 s 2_sfp_solo;
+#X obj 358 497 s 3_sfp_solo;
+#X obj 450 497 s 4_sfp_solo;
+#X obj 543 497 s 5_sfp_solo;
+#X obj 635 497 s 6_sfp_solo;
+#X obj 728 497 s 7_sfp_solo;
+#X obj 728 521 print Solo Status List:;
+#X floatatom 29 135 5 0 0 0 - - - 0;
+#X text 213 524 send special message to GUI;
+#X msg 370 384 1 1 1 1 1 1 1 1;
+#X text 488 383 if all solos are off \, we send ones to let signal
+through;
+#X obj 173 344 t b b;
+#X obj 84 344 t b b b b;
+#X obj 150 200 t l l, f 30;
+#X text 214 343 if any solos are on we send the real status of the
+toggles;
+#X obj 750 446 s solo-status-list;
+#X text 750 424 send status list to GUI;
+#X obj 814 48 r sfp_all_cycle;
+#X msg 814 72 0 0 0 0 0 0 0 0;
+#X obj 814 96 unpack f f f f f f f f;
+#X text 817 28 re-init;
+#N canvas 0 25 960 560 note 0;
+#X text 15 11 in the max version of the patch the logic is the same
+but when the solos are all off we send zeros to the SPFs \, then we
+say "if the solo is off \, send a 1 \, otherwise send a 0". basically
+it's the same logic \, but the value passed is inverted.;
+#X restore 656 10 pd note;
+#X connect 0 0 9 0;
+#X connect 1 0 11 0;
+#X connect 2 0 13 0;
+#X connect 3 0 15 0;
+#X connect 4 0 17 0;
+#X connect 5 0 19 0;
+#X connect 6 0 21 0;
+#X connect 7 0 23 0;
+#X connect 9 0 10 0;
+#X connect 10 0 26 0;
+#X connect 10 0 51 0;
+#X connect 11 0 12 0;
+#X connect 12 0 26 1;
+#X connect 13 0 14 0;
+#X connect 14 0 26 2;
+#X connect 15 0 16 0;
+#X connect 16 0 26 3;
+#X connect 17 0 18 0;
+#X connect 18 0 26 4;
+#X connect 19 0 20 0;
+#X connect 20 0 26 5;
+#X connect 21 0 22 0;
+#X connect 22 0 26 6;
+#X connect 23 0 24 0;
+#X connect 24 0 26 7;
+#X connect 26 0 57 0;
+#X connect 27 0 28 0;
+#X connect 28 0 30 0;
+#X connect 30 0 31 0;
+#X connect 31 0 56 0;
+#X connect 31 1 55 0;
+#X connect 32 0 39 0;
+#X connect 33 0 39 0;
+#X connect 34 0 41 0;
+#X connect 34 0 59 0;
+#X connect 41 0 42 0;
+#X connect 41 1 43 0;
+#X connect 41 2 44 0;
+#X connect 41 3 45 0;
+#X connect 41 4 46 0;
+#X connect 41 5 47 0;
+#X connect 41 6 48 0;
+#X connect 41 7 49 0;
+#X connect 53 0 34 1;
+#X connect 55 0 33 0;
+#X connect 55 1 34 0;
+#X connect 56 0 40 0;
+#X connect 56 2 34 0;
+#X connect 56 3 53 0;
+#X connect 57 0 27 0;
+#X connect 57 1 34 1;
+#X connect 61 0 62 0;
+#X connect 62 0 63 0;
+#X connect 63 0 10 0;
+#X connect 63 1 12 0;
+#X connect 63 2 14 0;
+#X connect 63 3 16 0;
+#X connect 63 4 18 0;
+#X connect 63 5 20 0;
+#X connect 63 6 22 0;
+#X connect 63 7 24 0;
+#X restore 682 66 pd solo;
+#N canvas 960 612 960 560 route 0;
+#X text 7 5 simply reset the phase of the phasor to 0 to restart the
+audio file. the route var name is there for historical reasons. originally
+we were going to rotate the soundfields using "roll" but the result
+was not very interesting...;
+#X obj 72 147 sel 127;
+#X obj 72 171 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 72 123 r nk2_route_0;
+#X obj 173 147 sel 127;
+#X obj 173 171 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 274 147 sel 127;
+#X obj 274 171 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 375 147 sel 127;
+#X obj 375 171 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 473 147 sel 127;
+#X obj 473 171 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 574 147 sel 127;
+#X obj 574 171 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 676 147 sel 127;
+#X obj 676 171 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 776 147 sel 127;
+#X obj 776 171 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 14 488 lots of copy pasting and manual editing in this patch.
+there is a better way to do it but this makes it easier to modify for
+non-experts. there are many variables which are unnecessary but help
+readability...;
+#X obj 173 123 r nk2_route_1;
+#X obj 274 123 r nk2_route_2;
+#X obj 375 123 r nk2_route_3;
+#X obj 473 123 r nk2_route_4;
+#X obj 574 123 r nk2_route_5;
+#X obj 676 123 r nk2_route_6;
+#X obj 776 123 r nk2_route_7;
+#X obj 72 215 s 0_sfp_route;
+#X obj 776 215 s 7_sfp_route;
+#X obj 676 215 s 6_sfp_route;
+#X obj 574 215 s 5_sfp_route;
+#X obj 473 215 s 4_sfp_route;
+#X obj 375 215 s 3_sfp_route;
+#X obj 274 215 s 2_sfp_route;
+#X obj 173 215 s 1_sfp_route;
+#X msg 72 191 1;
+#X msg 173 191 1;
+#X msg 274 191 1;
+#X msg 375 191 1;
+#X msg 473 191 1;
+#X msg 574 191 1;
+#X msg 676 191 1;
+#X msg 776 191 1;
+#X text 161 253 for sub-process it is easier to send a 1 than a bang.
+;
+#X connect 1 0 2 0;
+#X connect 2 0 34 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 35 0;
+#X connect 6 0 7 0;
+#X connect 7 0 36 0;
+#X connect 8 0 9 0;
+#X connect 9 0 37 0;
+#X connect 10 0 11 0;
+#X connect 11 0 38 0;
+#X connect 12 0 13 0;
+#X connect 13 0 39 0;
+#X connect 14 0 15 0;
+#X connect 15 0 40 0;
+#X connect 16 0 17 0;
+#X connect 17 0 41 0;
+#X connect 19 0 4 0;
+#X connect 20 0 6 0;
+#X connect 21 0 8 0;
+#X connect 22 0 10 0;
+#X connect 23 0 12 0;
+#X connect 24 0 14 0;
+#X connect 25 0 16 0;
+#X connect 34 0 26 0;
+#X connect 35 0 33 0;
+#X connect 36 0 32 0;
+#X connect 37 0 31 0;
+#X connect 38 0 30 0;
+#X connect 39 0 29 0;
+#X connect 40 0 28 0;
+#X connect 41 0 27 0;
+#X restore 682 113 pd route;
+#N canvas 960 25 960 560 gain 0;
+#X text 7 10 control the volume of the SFPs using the fader os on the
+NK2;
+#X obj 90 240 r nk2_gain_0;
+#X obj 183 240 r nk2_gain_1;
+#X obj 277 240 r nk2_gain_2;
+#X obj 372 240 r nk2_gain_3;
+#X obj 468 240 r nk2_gain_4;
+#X obj 563 240 r nk2_gain_5;
+#X obj 659 240 r nk2_gain_6;
+#X obj 749 240 r nk2_gain_7;
+#X obj 90 264 / 127;
+#X obj 183 264 / 127;
+#X obj 277 264 / 127;
+#X obj 372 264 / 127;
+#X obj 468 264 / 127;
+#X obj 563 264 / 127;
+#X obj 659 264 / 127;
+#X obj 749 264 / 127;
+#X obj 90 288 s 0_sfp_gain;
+#X obj 183 288 s 1_sfp_gain;
+#X obj 277 288 s 2_sfp_gain;
+#X obj 372 288 s 3_sfp_gain;
+#X obj 468 288 s 4_sfp_gain;
+#X obj 563 288 s 5_sfp_gain;
+#X obj 659 288 s 6_sfp_gain;
+#X obj 749 288 s 7_sfp_gain;
+#X floatatom 41 325 5 0 0 0 - - - 0;
+#X text 654 346 gain NOT reset by cycle;
+#X connect 1 0 9 0;
+#X connect 1 0 25 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 16 0;
+#X connect 9 0 17 0;
+#X connect 10 0 18 0;
+#X connect 11 0 19 0;
+#X connect 12 0 20 0;
+#X connect 13 0 21 0;
+#X connect 14 0 22 0;
+#X connect 15 0 23 0;
+#X connect 16 0 24 0;
+#X restore 682 135 pd gain;
+#X text 739 43 reverb D/W control;
+#X text 736 87 mute via Korg MIDI controller;
+#X text 738 66 solo via Korg MIDI controller;
+#X text 745 111 restart the audio file;
+#X text 738 134 faders control gain of SFPs;
+#N canvas 960 25 960 560 nk2 0;
+#X obj 64 52 route 58 59 46 43 44 60 61 62 42 41 45;
+#X obj 64 6 ctlin;
+#X obj 64 29 pack f f;
+#X text 125 26 GLOBALS;
+#X obj 68 200 ctlin;
+#X obj 69 224 pack f f;
+#X obj 69 248 route 16 17 18 19 20 21 22 23;
+#X text 134 223 KNOBS;
+#X obj 643 41 ctlin;
+#X obj 644 65 pack f f;
+#X obj 644 89 route 64 65 66 67 68 69 70 71;
+#X text 717 69 R-BUTTONS;
+#X obj 620 65 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X floatatom 71 379 5 0 0 0 - - - 0;
+#X obj 371 42 ctlin;
+#X obj 372 66 pack f f;
+#X obj 372 90 route 32 33 34 35 36 37 38 39;
+#X text 437 67 SOLO BUTTONS;
+#X obj 358 220 ctlin;
+#X obj 359 244 pack f f;
+#X text 427 246 SLIDERS;
+#X obj 359 268 route 0 1 2 3 4 5 6 7;
+#X obj 636 232 ctlin;
+#X obj 637 256 pack f f;
+#X obj 637 280 route 48 49 50 51 52 53 54 55;
+#X text 702 258 MUTE BUTTONS;
+#X obj 64 75 s nk2_track_l;
+#X obj 64 98 s nk2_track_r;
+#X obj 64 121 s nk2_cycle;
+#X obj 64 144 s nk2_back;
+#X obj 64 167 s nk2_forward;
+#X obj 165 76 s nk2_set;
+#X obj 165 99 s nk2_set_l;
+#X obj 165 122 s nk2_set_r;
+#X obj 165 145 s nk2_stop;
+#X obj 165 168 s nk2_play;
+#X obj 165 191 s nk2_record;
+#X msg 296 97 reject;
+#X msg 286 274 reject;
+#X obj 69 271 s nk2_roll_0;
+#X obj 69 294 s nk2_roll_1;
+#X obj 69 317 s nk2_roll_2;
+#X obj 69 340 s nk2_roll_3;
+#X obj 179 274 s nk2_roll_4;
+#X obj 179 297 s nk2_roll_5;
+#X obj 179 320 s nk2_roll_6;
+#X obj 179 343 s nk2_roll_7;
+#X obj 645 120 s nk2_route_0;
+#X obj 645 143 s nk2_route_1;
+#X obj 645 189 s nk2_route_3;
+#X obj 645 166 s nk2_route_2;
+#X obj 755 123 s nk2_route_4;
+#X obj 755 146 s nk2_route_5;
+#X obj 755 169 s nk2_route_6;
+#X obj 755 192 s nk2_route_7;
+#X obj 371 123 s nk2_solo_0;
+#X obj 371 146 s nk2_solo_1;
+#X obj 371 169 s nk2_solo_2;
+#X obj 371 192 s nk2_solo_3;
+#X obj 481 126 s nk2_solo_4;
+#X obj 481 149 s nk2_solo_5;
+#X obj 481 172 s nk2_solo_6;
+#X obj 481 195 s nk2_solo_7;
+#X obj 364 305 s nk2_gain_0;
+#X obj 364 328 s nk2_gain_1;
+#X obj 364 351 s nk2_gain_2;
+#X obj 364 374 s nk2_gain_3;
+#X obj 474 308 s nk2_gain_4;
+#X obj 474 331 s nk2_gain_5;
+#X obj 474 354 s nk2_gain_6;
+#X obj 474 377 s nk2_gain_7;
+#X obj 634 314 s nk2_mute_0;
+#X obj 634 337 s nk2_mute_1;
+#X obj 634 360 s nk2_mute_2;
+#X obj 634 383 s nk2_mute_3;
+#X obj 744 317 s nk2_mute_4;
+#X obj 744 340 s nk2_mute_5;
+#X obj 744 363 s nk2_mute_6;
+#X obj 744 386 s nk2_mute_7;
+#X connect 0 0 26 0;
+#X connect 0 1 27 0;
+#X connect 0 2 28 0;
+#X connect 0 3 29 0;
+#X connect 0 4 30 0;
+#X connect 0 5 31 0;
+#X connect 0 6 32 0;
+#X connect 0 7 33 0;
+#X connect 0 8 34 0;
+#X connect 0 9 35 0;
+#X connect 0 10 36 0;
+#X connect 0 11 37 0;
+#X connect 1 0 2 1;
+#X connect 1 1 2 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 1;
+#X connect 4 1 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 13 0;
+#X connect 6 0 39 0;
+#X connect 6 1 40 0;
+#X connect 6 2 41 0;
+#X connect 6 3 42 0;
+#X connect 6 4 43 0;
+#X connect 6 5 44 0;
+#X connect 6 6 45 0;
+#X connect 6 7 46 0;
+#X connect 6 8 38 0;
+#X connect 8 0 9 1;
+#X connect 8 1 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 12 0;
+#X connect 10 0 47 0;
+#X connect 10 1 48 0;
+#X connect 10 2 50 0;
+#X connect 10 3 49 0;
+#X connect 10 4 51 0;
+#X connect 10 5 52 0;
+#X connect 10 6 53 0;
+#X connect 10 7 54 0;
+#X connect 14 0 15 1;
+#X connect 14 1 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 55 0;
+#X connect 16 1 56 0;
+#X connect 16 2 57 0;
+#X connect 16 3 58 0;
+#X connect 16 4 59 0;
+#X connect 16 5 60 0;
+#X connect 16 6 61 0;
+#X connect 16 7 62 0;
+#X connect 18 0 19 1;
+#X connect 18 1 19 0;
+#X connect 19 0 21 0;
+#X connect 21 0 63 0;
+#X connect 21 1 64 0;
+#X connect 21 2 65 0;
+#X connect 21 3 66 0;
+#X connect 21 4 67 0;
+#X connect 21 5 68 0;
+#X connect 21 6 69 0;
+#X connect 21 7 70 0;
+#X connect 22 0 23 1;
+#X connect 22 1 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 71 0;
+#X connect 24 1 72 0;
+#X connect 24 2 73 0;
+#X connect 24 3 74 0;
+#X connect 24 4 75 0;
+#X connect 24 5 76 0;
+#X connect 24 6 77 0;
+#X connect 24 7 78 0;
+#X restore 711 753 pd nk2;
+#X text 761 752 ctlin for NK2;
+#X obj 353 297 tgl 15 0 empty 0_sfp_mute empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 17 954 1.arg: <float> ambisonic order;
+#X text 16 970 2.arg: <float> dimension (2 or 3);
+#X text 16 982 3.arg: <float> number of real existing loudspeakers
+;
+#X text 16 994 4.arg: <float> number of virtual phantom_loudspeakers
+;
+#X obj 37 369 + 1;
+#X msg 810 258 0;
+#X obj 355 153 r solo-status-list;
+#X obj 354 176 unpack f f f f f f f f, f 40;
+#X obj 810 234 r all_sfp_solo_off;
+#X obj 353 317 bng 15 250 50 0 empty 0_sfp_route empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 393 317 bng 15 250 50 0 empty 1_sfp_route empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 433 317 bng 15 250 50 0 empty 2_sfp_route empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 473 317 bng 15 250 50 0 empty 3_sfp_route empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 513 317 bng 15 250 50 0 empty 4_sfp_route empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 553 317 bng 15 250 50 0 empty 5_sfp_route empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 593 317 bng 15 250 50 0 empty 6_sfp_route empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 633 317 bng 15 250 50 0 empty 7_sfp_route empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 904 1118 GZB;
+#X text 236 792 speaker num \, elev \, azi;
+#X text 57 587 matrix inverse non-singular is good!;
+#X obj 691 246 tgl 30 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#N canvas 960 612 960 560 SFPs 1;
+#X msg 269 113 pd~ stop;
+#X obj 18 45 sel 1 0;
+#X obj 18 20 r pd~status;
+#X text 407 24 pd~ allows us to take advantage of multi-core CPUs.
+normally Pd runs on a single CPU which cannot handle all the calculations
+we need for patch this big.;
+#X text 30 502 for debugging show GUIs;
+#X text 35 521 when ready use -nogui flag;
+#X text 407 74 in our case each SFP (sound file player) is a sub-process
+and each helper abstraction is used to format messages such that the
+sub-processes can receive data from the main patch (aka. super-process).
+;
+#X obj 187 188 sub-process-helper16 0;
+#X obj 187 213 sub-process-helper16 1;
+#X obj 207 243 sub-process-helper16 2;
+#X obj 207 268 sub-process-helper16 3;
+#X obj 246 296 sub-process-helper16 4;
+#X obj 246 321 sub-process-helper16 5;
+#X obj 280 347 sub-process-helper16 6;
+#X obj 280 372 sub-process-helper16 7;
+#X msg 35 113 pd~ start -nogui 5-0-player16.pd;
+#X msg 13 480 pd~ start 5-0-player16.pd;
+#X connect 0 0 7 0;
+#X connect 0 0 8 0;
+#X connect 0 0 9 0;
+#X connect 0 0 10 0;
+#X connect 0 0 11 0;
+#X connect 0 0 12 0;
+#X connect 0 0 13 0;
+#X connect 0 0 14 0;
+#X connect 1 0 15 0;
+#X connect 1 1 0 0;
+#X connect 2 0 1 0;
+#X connect 15 0 7 0;
+#X connect 15 0 8 0;
+#X connect 15 0 9 0;
+#X connect 15 0 10 0;
+#X connect 15 0 11 0;
+#X connect 15 0 12 0;
+#X connect 15 0 13 0;
+#X connect 15 0 14 0;
+#X restore 711 786 pd SFPs;
+#X text 722 248 start PD~;
+#X obj 691 295 s pd~status;
+#X obj 811 210 r pd~status-init;
+#X text 677 480 Gabriel Zalles B;
+#X text 765 785 sound file players [!!!];
+#X text 645 786 uses pd~;
+#X text 645 527 uses pd~;
+#N canvas 278 25 960 1147 recording 0;
+#X msg 148 195 pd~ stop;
+#X obj 10 794 pd~ -ninsig 20 -noutsig 0 -fifo 20, f 90;
+#X obj 529 521 inlet~;
+#X obj 539 531 inlet~;
+#X obj 549 541 inlet~;
+#X obj 559 551 inlet~;
+#X obj 569 561 inlet~;
+#X obj 579 571 inlet~;
+#X obj 589 581 inlet~;
+#X obj 599 591 inlet~;
+#X obj 609 601 inlet~;
+#X obj 620 611 inlet~;
+#X obj 629 621 inlet~;
+#X obj 639 631 inlet~;
+#X obj 649 641 inlet~;
+#X obj 659 651 inlet~;
+#X obj 669 661 inlet~;
+#X obj 679 671 inlet~;
+#X text 592 524 16 inlets~ for HOA soundfield in SID format;
+#X text 753 705 raw mic signals;
+#X obj 661 703 adc~ 1 2 3 4;
+#X text 498 461 the ambisonic recording is in SID format. we recommend
+using the ambix plug-in suite to convert to ambix. the suite is by
+matthias kronlachner;
+#X obj 10 5 r sfp_all_record;
+#X obj 10 29 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X text 86 219 create a new 16-bit integer soundfile;
+#X obj 10 49 sel 1 0, f 40;
+#X obj 9 217 savepanel;
+#X msg 9 241 open \$1;
+#X obj 9 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 379 998 sel 1 0;
+#X obj 379 973 r pd~status;
+#X text 437 996 sub-process off if not recording.;
+#X text 669 40 1 start sub process;
+#X text 669 59 2 create and send path to pd~;
+#X msg 9 446 start;
+#X msg 211 446 stop;
+#X obj 9 314 list append;
+#X obj 9 265 t b a;
+#X msg 9 289 rec_filename;
+#X obj 9 337 route list;
+#X text 97 292 receiver name in sub-process;
+#X text 95 314 concatenate strings;
+#X text 85 339 remove "list" from symbol;
+#X obj 148 81 t b b, f 10;
+#X text 669 78 3 start recording in pd~;
+#X text 669 97 4 stop recording in pd~;
+#X text 669 116 5 kill pd~;
+#X obj 115 562 list append;
+#X obj 115 514 t b a;
+#X obj 115 586 route list;
+#X text 196 541 receiver name in sub-process;
+#X text 199 564 concatenate strings;
+#X text 197 593 remove "list" from symbol;
+#X msg 115 538 rec_status;
+#X obj 9 360 t b a;
+#X obj 9 386 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 10 73 t b b, f 13;
+#X text 56 357 wait for string to be formatted \, then pass it down
+\, then bang start message;
+#X text 227 80 stop recording first \, then kill pd~;
+#X text 374 1019 this sub-process is an exception. we assume the user
+will always need the 8 sub-processes for the sound file players and
+the 4 processes for live inputs as these are both integral to the piece.
+since recording is not \, we do not init the sub-process automatically.
+rather \, the sub-process starts if the user hits the record button
+;
+#X text 9 852 rec status message will look like "rec_status start"
+or "rec_status stop";
+#X text 10 818 rec_filename message will look like "rec_filename open
+filename";
+#X text 226 171 wait N seconds to give pd~ time to close recording
+;
+#X obj 148 171 delay 2000;
+#X msg 99 145 pd~ start -nogui rec16.pd;
+#X text 288 145 open rec16.pd as sub-process;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;
+#X connect 4 0 1 2;
+#X connect 5 0 1 3;
+#X connect 6 0 1 4;
+#X connect 7 0 1 5;
+#X connect 8 0 1 6;
+#X connect 9 0 1 7;
+#X connect 10 0 1 8;
+#X connect 11 0 1 9;
+#X connect 12 0 1 10;
+#X connect 13 0 1 11;
+#X connect 14 0 1 12;
+#X connect 15 0 1 13;
+#X connect 16 0 1 14;
+#X connect 17 0 1 15;
+#X connect 20 0 1 16;
+#X connect 20 1 1 17;
+#X connect 20 2 1 18;
+#X connect 20 3 1 19;
+#X connect 22 0 23 0;
+#X connect 23 0 25 0;
+#X connect 25 0 56 0;
+#X connect 25 1 43 0;
+#X connect 26 0 27 0;
+#X connect 27 0 37 0;
+#X connect 28 0 26 0;
+#X connect 30 0 29 0;
+#X connect 34 0 48 0;
+#X connect 35 0 48 0;
+#X connect 36 0 39 0;
+#X connect 37 0 38 0;
+#X connect 37 1 36 1;
+#X connect 38 0 36 0;
+#X connect 39 0 54 0;
+#X connect 43 0 63 0;
+#X connect 43 1 35 0;
+#X connect 47 0 49 0;
+#X connect 48 0 53 0;
+#X connect 48 1 47 1;
+#X connect 49 0 1 0;
+#X connect 53 0 47 0;
+#X connect 54 0 55 0;
+#X connect 54 1 1 0;
+#X connect 55 0 34 0;
+#X connect 56 0 28 0;
+#X connect 56 1 64 0;
+#X connect 63 0 0 0;
+#X connect 64 0 1 0;
+#X restore 437 1072 pd recording;
+#X f 47;
+#X text 14 1117 UCSD Dept. Music;
+#X text 259 1106 recorded sans decoding! in SID format;
+#X text 259 1087 [pd~ sub-process];
+#X obj 435 836 catch~ h1;
+#X obj 458 865 catch~ h2;
+#X obj 480 891 catch~ h3;
+#X obj 502 915 catch~ h4;
+#X obj 523 941 catch~ h5;
+#X obj 544 968 catch~ h6;
+#X obj 566 994 catch~ h7;
+#X obj 589 1019 catch~ h8;
+#X obj 609 836 catch~ h9;
+#X obj 629 865 catch~ h10;
+#X obj 651 891 catch~ h11;
+#X obj 673 915 catch~ h12;
+#X obj 694 941 catch~ h13;
+#X obj 717 968 catch~ h14;
+#X obj 738 994 catch~ h15;
+#X obj 761 1019 catch~ h16;
+#X connect 43 0 47 0;
+#X connect 44 0 49 0;
+#X connect 45 0 54 0;
+#X connect 46 0 54 0;
+#X connect 47 0 55 0;
+#X connect 49 0 69 0;
+#X connect 49 1 69 1;
+#X connect 49 2 69 2;
+#X connect 49 3 69 3;
+#X connect 49 4 69 4;
+#X connect 49 5 69 5;
+#X connect 49 6 69 6;
+#X connect 49 7 69 7;
+#X connect 49 8 69 8;
+#X connect 49 9 69 9;
+#X connect 49 10 69 10;
+#X connect 49 11 69 11;
+#X connect 49 12 69 12;
+#X connect 49 13 69 13;
+#X connect 49 14 69 14;
+#X connect 49 15 69 15;
+#X connect 50 0 52 0;
+#X connect 51 0 54 0;
+#X connect 52 0 54 0;
+#X connect 53 0 54 0;
+#X connect 54 0 44 0;
+#X connect 55 0 46 0;
+#X connect 55 1 45 0;
+#X connect 55 2 56 0;
+#X connect 55 3 50 0;
+#X connect 55 4 51 0;
+#X connect 56 0 53 0;
+#X connect 71 0 75 0;
+#X connect 74 0 118 0;
+#X connect 75 0 32 0;
+#X connect 76 0 34 0;
+#X connect 77 0 39 0;
+#X connect 78 0 40 0;
+#X connect 79 0 41 0;
+#X connect 80 0 42 0;
+#X connect 87 0 37 0;
+#X connect 88 0 33 0;
+#X connect 92 0 35 0;
+#X connect 93 0 36 0;
+#X connect 94 0 81 0;
+#X connect 118 0 38 0;
+#X connect 119 0 28 0;
+#X connect 119 0 25 0;
+#X connect 119 0 22 0;
+#X connect 119 0 19 0;
+#X connect 119 0 15 0;
+#X connect 119 0 11 0;
+#X connect 119 0 7 0;
+#X connect 119 0 3 0;
+#X connect 120 0 121 0;
+#X connect 121 0 3 0;
+#X connect 121 1 7 0;
+#X connect 121 2 11 0;
+#X connect 121 3 15 0;
+#X connect 121 4 19 0;
+#X connect 121 5 22 0;
+#X connect 121 6 25 0;
+#X connect 121 7 28 0;
+#X connect 122 0 119 0;
+#X connect 134 0 137 0;
+#X connect 138 0 134 0;
+#X connect 147 0 49 1;
+#X connect 147 0 143 0;
+#X connect 148 0 49 2;
+#X connect 148 0 143 1;
+#X connect 149 0 49 3;
+#X connect 149 0 143 2;
+#X connect 150 0 49 4;
+#X connect 150 0 143 3;
+#X connect 151 0 49 5;
+#X connect 151 0 143 4;
+#X connect 152 0 49 6;
+#X connect 152 0 143 5;
+#X connect 153 0 49 7;
+#X connect 153 0 143 6;
+#X connect 154 0 49 8;
+#X connect 154 0 143 7;
+#X connect 155 0 49 9;
+#X connect 155 0 143 8;
+#X connect 156 0 49 10;
+#X connect 156 0 143 9;
+#X connect 157 0 49 11;
+#X connect 157 0 143 10;
+#X connect 158 0 49 12;
+#X connect 158 0 143 11;
+#X connect 159 0 49 13;
+#X connect 159 0 143 12;
+#X connect 160 0 49 14;
+#X connect 160 0 143 13;
+#X connect 161 0 49 15;
+#X connect 161 0 143 14;
+#X connect 162 0 49 16;
+#X connect 162 0 143 15;
+#X coords 0 -1 1 1 600 300 1 200 200;
